@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Lato:wght@300&display=swap');
+
+/* I am going to set serious variables here so later if changes are required we can centrally make all changes */
+:root {
+    --web-primary-bg-color-theme:#0a354e !important;
+    --primary-font-color:#fff!important;
+    --primary-font-family:'Lato';
+    --secondary-font-family:'Abel';
+  }
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font-family);
+}
+/*  #############################################################
+                        Stand Alone Classes
+    ##############################################################
+ */ 
+.page-top-container{
+    margin-top: 133px !important;
+}
+.f-weight-900{
+    font-weight: 900;
+}
+a{
+    color: black !important;
+    text-decoration: none;
+}
+ .primary-background-color{
+     background: var(--web-primary-bg-color-theme);   
+ }
+/*  #############################################################
+            Header Section All NAVBAR CSS Classes are here 
+    ##############################################################
+ */ 
+ 
+.navbar {
+    
+    font-weight: 900; 
+}
+
+.hero-header {
+    height: 25vh;
+    background: url('/media/annie-spratt-V1lmayjfBJc-unsplash.jpg'); no-repeat bottom right fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}

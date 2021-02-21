@@ -1,0 +1,161 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block meta %}
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% endblock %}
+    {% block extra_meta %}
+    {% endblock %}
+
+    {% block corecss %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        {% endblock %}
+    {% block extra_css %}
+    {% endblock %}
+
+    {% block corejs %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/60ca92335a.js" crossorigin="anonymous"></script>
+        {% endblock %}
+    
+    {% block extra_js %}
+    {% endblock %} 
+    <title>Jacxx Productions{% block extra_title %}{% endblock %}</title>
+  </head>
+  <body>
+    <header class="fixed-top ">
+        <div class="row">
+            <div id="topnav" class="row bg-white pt-lg-2  d-lg-flex">
+				<div class="col-12 col-lg-2 my-auto py-1 py-lg-0 text-center text-lg-start">
+					<a href="" class="nav-link main-logo-link text-center">
+						<h2 class="logo-font text-dark my-0 f-weight-900"><strong class="text-success">jaxx</strong><br><span class="">PRODUCTIONS</span></h2>
+					</a>
+				</div>
+				<div class="col-12 col-lg-10 my-auto py-1 py-lg-0 d-none d-sm-none d-md-none d-lg-block">
+					<ul class="list-inline list-unstyled text-center text-lg-end my-0 d-lg-block">
+						<li class="list-inline-item dropdown">
+							<a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">
+								<div class="text-center">
+									<div><i class="fas fa-user-circle fa-lg text-dark"></i></div>
+									<p class="my-0  text-dark">My Account</p>
+								</div>
+							</a>
+							<div class="dropdown-menu border-0" aria-labelledby="user-options">
+								{% if request.user.is_authenticated %}
+								{% if request.user.is_superuser %}
+								<a href="" class="dropdown-item">Add Product Category</a>
+								<a href="" class="dropdown-item">Add Product</a>
+                                <a href="" class="dropdown-item" >Color Management</a>
+                                <a href="" class="dropdown-item">Size Management</a>
+								{% endif %}
+								<a href="" class="dropdown-item">My Profile</a>
+								<a href="" class="dropdown-item">Logout</a>
+								{% else %}
+								<a href="" class="dropdown-item">Register</a>
+								<a href="" class="dropdown-item">Login</a>
+								{% endif %}                                
+                                    
+                               
+							</div>
+						</li>
+						<li class="list-inline-item">
+							<a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+								href="">
+								<div class="text-center">
+									<div>
+										<i class="fas fa-shopping-cart fa-lg  text-dark"></i>
+									</div>
+									<p class="my-0  text-dark">
+										{% if grand_total %}
+										${{ grand_total|floatformat:2 }}
+										{% else %}
+										$0.00
+										{% endif %}
+									</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">                
+                <button 
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>                            
+
+                <a class="text-black nav-link d-block d-lg-none" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+                    <div class="text-center">
+                        <div><i class="fas fa-user fa-lg"></i></div>
+                        <p class="my-0">My Account</p>
+                    </div>
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="navbarDropdown">
+                    {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                            <a href="" class="dropdown-item">Product Management</a>
+                        {% endif %}
+                        <a href="" class="dropdown-item">My Profile</a>
+                        <a href="" class="dropdown-item">Logout</a>
+                    {% else %}
+                        <a href="" class="dropdown-item">Register</a>
+                        <a href="" class="dropdown-item">Login</a>
+                    {% endif %}
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto" style="margin-right: 1px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">TEsting</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+       
+    </div>
+    {% if messages %}
+        <div class="message-container"></div>
+    {% endif %}
+    {% block page_header %}
+    {% endblock %}
+    
+    {% block content %}
+    {% endblock %}
+   
+    {% block postloadjs %}
+    {% endblock %}
+  </body>
+</html>
