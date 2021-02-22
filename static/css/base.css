@@ -19,13 +19,13 @@
     ##############################################################
  */ 
 .page-top-container{
-    margin-top: 200px !important;
+    padding-top: 164px!important;
 }
 .f-weight-900{
     font-weight: 900;
 }
 a{
-    color: #000 !important;
+    color: #fff !important;
     text-decoration: none;
 }
  .primary-background-color{
@@ -43,14 +43,34 @@ a{
 
 .hero-header {
     height: 100%;
-    background: url('/media/annie-spratt-V1lmayjfBJc-unsplash.jpg'); no-repeat bottom right fixed;
+    background: url('/media/annie-spratt-V1lmayjfBJc-unsplash.jpg') no-repeat bottom right fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+}
+
+.hero-section{
+    background: url('/media/annie-spratt-V1lmayjfBJc-unsplash.jpg') no-repeat center top;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #F4FFFD;
+    font-family: 'Lato';
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    
+
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    
+
+    
 }
