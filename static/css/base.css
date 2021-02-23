@@ -3,7 +3,7 @@
 /* I am going to set serious variables here so later if changes are required we can centrally make all changes */
 :root {
     --web-primary-bg-color-theme:#0a354e !important;
-    --primary-font-color:#fff!important;
+    --primary-font-color:#ffffff !important;
     --primary-font-family:'Lato';
     --secondary-font-family:'Abel';
   }
@@ -24,8 +24,8 @@
 .f-weight-900{
     font-weight: 900;
 }
-a{
-    color: #fff !important;
+.primary-font-color{
+    color: var(--primary-font-color);
     text-decoration: none;
 }
  .primary-background-color{
@@ -60,6 +60,9 @@ a{
     height: calc(100vh - 164px);
     color: #F4FFFD;
     font-family: 'Lato';
+}
+#navbarSupportedContent > ul > li > ul > a:nth-child{
+    color: black;
 }
 
 /* fixed top navbar only on medium and up */

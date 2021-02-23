@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'django_extensions',
     
     # custom site app goes here
-    'Jaxx_products_home.apps.JaxxProductsHomeConfig'
+    'Jaxx_products_home.apps.JaxxProductsHomeConfig',
+    'products.apps.ProductsConfig',
 
 
     
