@@ -13,6 +13,9 @@
                Products page:
             </h3>
             <p>Proudly presents our family bussiness Jaxx Productions</p>
+            {% for item in clothing_categories %}
+                {{ item.name }}
+            {% endfor %}
         </div>
     </div>
 
