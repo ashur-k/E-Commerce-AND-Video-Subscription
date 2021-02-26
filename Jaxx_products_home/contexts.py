@@ -2,12 +2,12 @@ from products.models import Category
 
 
 def navbar_categories(request):
-    clothing_categories = Category.objects.filter(parent_name='Clothing')
-    print(clothing_categories)
-    for item in clothing_categories:
-        print(item.status)
+    clothing_categories = Category.objects.filter(parent_name='clothing')
+    homeware_categories = Category.objects.filter(parent_name='homeware')
+    
     context = {
         'clothing_categories': clothing_categories,
+        'homeware_categories': homeware_categories,
     }
 
     return context

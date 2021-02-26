@@ -24,4 +24,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('Jaxx_products_home.urls')),
     path('products/', include('products.urls')),
+    path('videos/', include('videos.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

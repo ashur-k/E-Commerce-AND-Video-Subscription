@@ -1,6 +1,13 @@
 from django.db import models
 
 
+PARENT_NAMES = (
+        ('clothing', 'clothing'),
+        ('homeware', 'homeware'),
+        ('discount-offers', 'discount-offers'),
+        ('new-arrivals', 'new-arrivals'),
+    )
+
 STATUS = (
         ('True', 'True'),
         ('False', 'False'),
@@ -12,7 +19,7 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Categories'
 
-    parent_name = models.CharField(max_length=254)
+    parent_name = models.CharField(max_length=25, choices=PARENT_NAMES)
     name = models.CharField(max_length=254)
     image = models.ImageField(blank=False, upload_to='category_imgs/')
     friendly_name = models.CharField(max_length=254, null=True, blank=True)

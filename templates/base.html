@@ -28,75 +28,82 @@
     
     {% block extra_js %}
     {% endblock %} 
-    <title>Jacxx Productions{% block extra_title %}{% endblock %}</title>
+    <title>Jacxx {% block extra_title %}{% endblock %}</title>
+    <!--Later I can load JAxx log here -->
+    <link rel="shortcut icon" href="/media/title_icon.jpg">
+   
   </head>
   <body>
-    <header class="fixed-top ">
-        <div class="row">
-            <div id="topnav" class="row bg-white pt-lg-2  d-lg-flex">
-				<div class="col-12 col-lg-2 my-auto py-1 py-lg-0 text-center text-lg-start">
-					<a href="" class="nav-link main-logo-link text-center">
-						<h2 class="logo-font text-dark my-0 f-weight-900"><strong class="text-success">jaxx</strong><br><span class="">PRODUCTIONS</span></h2>
-					</a>
-				</div>
+    <section id="header-section" style="height: 100%;"></section>
+        <header class="fixed-top">
+            <div class="row">
+                <div id="topnav" class="row bg-white pt-lg-2  d-lg-flex">
+                    <div class="col-12 col-lg-2 my-auto py-1 py-lg-0 text-center text-lg-start">
+                        <a href="{% url 'homepage' %}" class="nav-link main-logo-link text-center">
+                            <h2 class="logo-font text-dark my-0 f-weight-900">
+                                <strong class="text-success">jaxx</strong><br><span class="">PRODUCTIONS</span>
+                            </h2>
+                        </a>
+                    </div>
 
-				<div class="col-12 col-lg-10 my-auto py-1 py-lg-0 d-none d-sm-none d-md-none d-lg-block">
-					<ul class="list-inline list-unstyled text-center text-lg-end my-0 d-lg-block">
-						<li class="list-inline-item dropdown">
-							<a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
-								aria-haspopup="true" aria-expanded="false">
-								<div class="text-center">
+                    <div class="col-12 col-lg-10 my-auto py-1 py-lg-0 d-none d-sm-none d-md-none d-lg-block">
+                        <ul class="list-inline list-unstyled text-center text-lg-end my-0 d-lg-block">
+                            <li class="list-inline-item dropdown">
+                                <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <div class="text-center">
 
-									<div><i class="fas fa-user-circle fa-lg text-dark"></i></div>
+                                        <div><i class="fas fa-user-circle fa-lg text-dark"></i></div>
 
-									<p class="my-0  text-dark">My Account</p>
-								</div>
-							</a>
-							<div class="dropdown-menu border-0" aria-labelledby="user-options">
-								{% if request.user.is_authenticated %}
-								{% if request.user.is_superuser %}
-								<a href="" class="dropdown-item">Add Product Category</a>
-								<a href="" class="dropdown-item">Add Product</a>
-                                <a href="" class="dropdown-item" >Color Management</a>
-                                <a href="" class="dropdown-item">Size Management</a>
-								{% endif %}
-								<a href="" class="dropdown-item">My Profile</a>
-								<a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-								{% else %}
-								<a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-								<a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-								{% endif %}                              
-                                    
-                               
-							</div>
-						</li>
-						<li class="list-inline-item">
-							<a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-								href="">
-								<div class="text-center">
-									<div>
-										<i class="fas fa-shopping-cart fa-lg  text-dark"></i>
-									</div>
-									<p class="my-0  text-dark">
-										{% if grand_total %}
-										${{ grand_total|floatformat:2 }}
-										{% else %}
-										$0.00
-										{% endif %}
-									</p>
-								</div>
-							</a>
-						</li>
-					</ul>
-				</div>
-        </div>
-        <nav class="navbar navbar-expand-lg" style="background-color: #311b92 !important">
-            <div class="container-fluid">                
-                {% include 'includes/mobile-top-header.html' %} 
-                {% include 'includes/main-nav.html' %}
+                                        <p class="my-0  text-dark">My Account</p>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                                    {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                    <a href="" class="dropdown-item">Add Product Category</a>
+                                    <a href="" class="dropdown-item">Add Product</a>
+                                    <a href="" class="dropdown-item" >Color Management</a>
+                                    <a href="" class="dropdown-item">Size Management</a>
+                                    {% endif %}
+                                    <a href="" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                    {% else %}
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                    {% endif %}                              
+                                        
+                                
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                                    href="">
+                                    <div class="text-center">
+                                        <div>
+                                            <i class="fas fa-shopping-cart fa-lg  text-dark"></i>
+                                        </div>
+                                        <p class="my-0  text-dark">
+                                            {% if grand_total %}
+                                            ${{ grand_total|floatformat:2 }}
+                                            {% else %}
+                                            $0.00
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
             </div>
-        </nav>
-    </header>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">                
+                    {% include 'includes/mobile-top-header.html' %} 
+                    {% include 'includes/main-nav.html' %}
+                </div>
+            </nav>
+        </header>
+    </section>
     <div class="container">
        
     </div>

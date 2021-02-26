@@ -37,7 +37,7 @@
  */ 
  
 .navbar {
-    
+    background: linear-gradient(to right, black, purple);
     font-weight: 900; 
 }
 

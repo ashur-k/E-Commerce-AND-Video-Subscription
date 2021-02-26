@@ -1,13 +1,16 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto fs-5" style="margin-right: 1px !important;">
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-4 primary-font-color" href="">
+            <a class="logo-font font-weight-bold nav-link text-black mr-4 primary-font-color" href="{% url 'homepage' %}">
                 Home
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link primary-font-color" href="{% url 'videos_home' %}" tabindex="-1" aria-disabled="true">Jacxx Videos</a>
+        </li>
         <li class="nav-item dropdown">
             <a class="nav-link primary-font-color" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    All Products
+                    Other Products
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a href="" class="dropdown-item">By Price</a>
@@ -21,9 +24,14 @@
                     Cothing
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                 {% for item in clothing_categories %}
-                    <a href="" class="dropdown-item">{{ item.name }}</a>                 
+                {% for item in clothing_categories %}
+                    
+                    <a href="" class="dropdown-item">
+                        <img class="img-thoumbnail" src="{{ item.image.url }}" style="width: 32px; height: 32px; aspect-ratio: auto 32 / 32; border-radius: 50%;">
+                        {{ item.name }}
+                    </a>                 
                 {% endfor %}
+                     <a href="" class="dropdown-item"><i class="fas fa-plus"> </i> Add new Category</a>
             </ul>
         </li>
         <li class="nav-item dropdown">
@@ -31,9 +39,13 @@
                     Homeware
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a href="" class="dropdown-item">Bed &amp; Bath</a>
-                <a href="" class="dropdown-item">Kitchen &amp; Dining</a>
-                <a href="" class="dropdown-item">All Homeware</a>
+                {% for item in homeware_categories %}
+                    <a href="" class="dropdown-item">
+                        <img class="img-thoumbnail" src="{{ item.image.url }}" style="width: 32px; height: 32px; aspect-ratio: auto 32 / 32; border-radius: 50%;">
+                        {{ item.name }}
+                    </a>
+                {% endfor %}
+                    <a href="" class="dropdown-item"><i class="fas fa-plus"> </i> Add new Category</a>
             </ul>
         </li>
         <li class="nav-item dropdown">

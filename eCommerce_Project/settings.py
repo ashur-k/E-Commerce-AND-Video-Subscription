@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     # custom site app goes here
     'Jaxx_products_home.apps.JaxxProductsHomeConfig',
     'products.apps.ProductsConfig',
+    'videos.apps.VideosConfig',
 
 
     
