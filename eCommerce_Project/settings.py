@@ -116,10 +116,12 @@ WSGI_APPLICATION = 'eCommerce_Project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-if 'DATABASE_URL' in os.environ:
+if 'JACXX_DATABASE_URL' in os.environ:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        'default': dj_database_url.parse(os.environ.get('JACXX_DATABASE_URL'))
     }
+
+    print("I am Connected to Postgress")
 else:
     DATABASES = {
         'default': {
@@ -127,6 +129,7 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+    print("I am Connected to sqlite")
 
 
 
