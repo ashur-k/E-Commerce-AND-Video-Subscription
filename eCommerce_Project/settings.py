@@ -31,6 +31,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['jacxx-productions.herokuapp.com', 'localhost']
 
+
+
 # Application definition
 
 INSTALLED_APPS = [
