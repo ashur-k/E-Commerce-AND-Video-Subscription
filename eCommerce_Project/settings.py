@@ -29,6 +29,7 @@ SECRET_KEY = os.environ.get('COMMERCIAL_ECOMMERCE_SECRET_KEY', '')
 
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['jacxx-productions.herokuapp.com', 'localhost']
 
 
