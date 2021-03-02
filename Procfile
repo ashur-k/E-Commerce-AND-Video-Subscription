@@ -1,0 +1,1 @@
+web: gunicorn Jacxx_Productions.wsgi:application
