@@ -1,1 +1,1 @@
-web: gunicorn Jacxx_Productions.wsgi:application
+web: gunicorn eCommerce_Project.wsgi:application
