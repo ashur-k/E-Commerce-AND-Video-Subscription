@@ -1,34 +1,116 @@
 {% extends "base.html" %}
+{% block extra_meta %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+{% block extra_title %} - V I D E O S{% endblock %}
 {% load static %}
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'Jaxx_products_home/css/Jaxx-products-home-styles.css' %}">
+    <link rel="stylesheet" href="{% static 'Jaxx_products_home/css/videos-style.css' %}">
+    <link rel="stylesheet" href="{% static 'Jaxx_products_home/css/lightslider.css' %}">
 {% endblock %}
+{% block extra_js %}
+<script type="text/javascript" src="{% static 'Jaxx_products_home/js/jquery.fullpage.js' %}" ></script>
+<script type="text/javascript" src="{% static 'Jaxx_products_home/js/lightslider.js' %}" ></script>
+{% endblock %} 
 {% load static %}
 
 {% block content %}
-<section id=""  style="">    
-    <div class="slantedDivA page-top-container text-center" >
-        <div class="col-sm-6 col-md-6 col-lg-6 mx-auto my-auto search-box mt-5 text-dark">
-            <h3 class="">
-               Jacxx Productions launch Ecomeerce and video subsctiption site.
-            </h3>
-            <p>Proudly presents our family bussiness Jaxx Productions</p>
+
+<div id="fullpage" class="container-fluid p-0 m-0">
+    <!--Section 1-->
+    <section>
+        <nav class="d-none">
+            <div class="logo">Jaxx-Videos</div>
+            <!--right menu-->
+            <div class="r-menu">
+                <!--website design-->
+                <a href="">Buy Subscriptions</a>
+                <button class="aa">Sign In</button>
+            </div>
+        </nav>
+        <!--Text-->
+        <div class="text">
+            <div class="jacxx">
+                <span>J</span>
+                <span>A</span>
+                <span>C</span>
+                <span>X</span>
+                <span>X</span>
+            </div>
+            <h1>VIDEOS</h1>
+            <button>To Know More</button>
         </div>
-    </div>
-    <div class="slantedDivB page-top-container">
-        <div class="col-sm-6 col-md-6 col-lg-6  me-0 search-box mt-5 text-light">
-            <h3 class="">
-               Jacxx Productions launch Ecomeerce and video subsctiption site.
-            </h3>
-            <p>Proudly presents our family bussiness Jaxx Productions</p>
-           
+        <div class="social">
+            <p>Follow Us And Stay Connected With Us</p>
+            <div class="social-icons">
+                <a href=""><i class="fab fa-facebook"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>              
+            </div>
+
         </div>
-    </div>
+    </section>
+    <!--Section 2-->
+    <section class="" style="margin-top: 35px;">
+        <div class="explore-h">
+            <h1>Watch our Videos</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                 Nostrum quod natus officia. Beatae ut in
+                  minus delectus ipsum similique ex.</p>
+        </div>
+        <div class="box-container">
+            <ul id="autoWidth" class="cs-hidden">
+                <li class="item-a">
+                    <div class="box-1 box">
+                        <p>STYLISH</p>
+                    </div>
+                </li>
+                <li class="item-b">
+                    <div class="box-2 box">
+                        <p>WITH LOVE</p>
+                    </div>
+                </li>
+                <li class="item-c">
+                    <div class="box-3 box">
+                        <p>BEAUTIFUL</p>
+                    </div>
+                </li>
+                <li class="item-d">
+                    <div class="box-4 box">
+                        <p>PROFESSIONAL</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+         <footer>
+            <!--logo------------->
+            <div class="copyright">Copyright 2020</div>
+            <!--menu--------------> 
+            <ul>
+                <li><a href="#">HOME</a></li> 
+                <li><a href="#">ABOUT US</a></li> 
+                <li><a href="#">CONACT US</a></li>            
+            </ul>    
+        </footer>
+      
+    </section>
+  
     
-</section>
+</div>
+<script type="text/javascript">
+    $('#fullpage').fullpage();
 
-
-
+    $(document).ready(function() {
+    $('#autoWidth').lightSlider({
+        autoWidth:true,
+        loop:true,
+        onSliderLoad: function() {
+            $('#autoWidth').removeClass('cS-hidden');
+        } 
+    });  
+  });
+</script>
 
    
 {% endblock %}

@@ -10,7 +10,7 @@
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link primary-font-color" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Other Products
+                    Products
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a href="" class="dropdown-item">By Price</a>
@@ -24,8 +24,7 @@
                     Cothing
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                {% for item in clothing_categories %}
-                    
+                {% for item in clothing_categories %}                    
                     <a href="" class="dropdown-item">
                         <img class="img-thoumbnail" src="{{ item.image.url }}" style="width: 32px; height: 32px; aspect-ratio: auto 32 / 32; border-radius: 50%;">
                         {{ item.name }}
@@ -46,27 +45,6 @@
                     </a>
                 {% endfor %}
                     <a href="" class="dropdown-item"><i class="fas fa-plus"> </i> Add new Category</a>
-            </ul>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link primary-font-color" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Discount Offers
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a href="" class="dropdown-item">30% Off Product for Girls</a>
-                <a href="" class="dropdown-item">30% Off Product for Boys</a>
-                <a href="" class="dropdown-item">30% Off Product for Women</a>
-                <a href="" class="dropdown-item">30% Off Product for Men</a>
-            </ul>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link primary-font-color" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                New Arrivals
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a href="" class="dropdown-item">Ladies Tops</a>
-                <a href="" class="dropdown-item">Damage Jeans and Trousers</a>
-                <a href="" class="dropdown-item">Shirts</a>
             </ul>
         </li>
         <li class="nav-item">

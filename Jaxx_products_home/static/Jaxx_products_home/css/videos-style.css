@@ -1,5 +1,10 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap');
 
+* {
+    padding: 0;
+    margin: 0;
+}
 a{
     text-decoration: none;
 }
@@ -17,13 +22,17 @@ ul{
     
 }
 #fullpage section:nth-child(1){
-    background-image: url('/media/video_home_page.jpg');
+    background-image: url('/media/idea-img.jpg');
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;  
+    position: relative;
 }
 #fullpage section:nth-child(2){
-    background-color:#101113;
+    background-image: #fff;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
     display: flex;
     flex-direction:column;
@@ -47,20 +56,38 @@ nav{
     padding: 25px 50px;
 }
 .logo{
-    font-family: RoadTest;
-    font-size: 25px;
-    color: #ffffff;
+    font-family: 'Butterfly Kids', cursive;
+    font-size: 54px !important;
+    color: #1b5e20;
+    font-size: 34px;
+    border-bottom: 1px solid ;
+    font-weight: 900;
+
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
 }
 .r-menu a{
-    font-family: Calibri;
-    color: #ffffff;
-    font-size: 14px;
+    font-family: 'Butterfly Kids', cursive;
+    color: #1b5e20;
+    font-size: 34px;
     margin: 0px 20px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid ;
+    font-weight: 900;
+
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
 }
 .r-menu button{
     font-family: Calibri;
-    color: #000000;
+    color: #fff;
+    background-color: #1b5e20;
     width: 90px;
     height: 35px;
     border-bottom-right-radius: 10px;
@@ -73,7 +100,7 @@ nav{
 .text{
     position: absolute;
     left: 50%;
-    top: 80%;
+    top: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
@@ -86,23 +113,37 @@ nav{
     font-size: 25px;
     padding: 3px 8px;
     margin: 2px;
-    background: linear-gradient(to right, #212121, purple);
+    background: linear-gradient(to right, #212121, #066d29);
     color: #fff;
 }
+.jacxx span:hover{
+    font-size: 32px;
+    color: #fff;
+    border: 1px solid #fff;
+    transition: all ease 0.5s;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+}
 .text h1{
-    font-family: calibiri;
+    font-family: 'Butterfly Kids', cursive;
     font-size: 70px;
-    color: #ffffff;
-    letter-spacing: 3px;
+    color: purple;
+    letter-spacing: 6px;
     margin: 0px;
     padding: 0px;
-    font-weight: 200;
+    font-weight: 900;
+    
+
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
 }
 .text button{
     width: 120px;
     height: 40px;
     outline: none;
-    background: linear-gradient(to right, #212121, purple);
+    background: linear-gradient(to right, #212121, #066d29);
     border: 1px solid #fff;
     font-size: 12px;
     font-family: calibiri;
@@ -123,23 +164,25 @@ nav{
 .social{
     position: absolute;
     left: 50%;
-    bottom: 25px;
+    bottom: 20px;
     transform: translateX(-50%);
     text-align: center;
 }
 .social p {
     font-family: calibiri;
-    color: #e3e8eb;
-    font-size: 14px;
+    color: #000;
+    font-size: 18px;
+    background-color: rgb(235 17 188 / 50%);
     letter-spacing: 1px;
+    padding: 2px;
 }
 .social-icons a{
     width: 30px;
     height: 30px;
     border-radius: 30px;
     border-radius: 50%;
-    background: linear-gradient(to right, #212121, purple);
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, #212121, #066d29);
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
     margin: 0px 5px;
     display: flex;
     justify-content: center;
@@ -168,18 +211,30 @@ nav{
 
 .explore-h h1{
     font-family: bebas kai;
-    font-size: 28px;
-    color: #ffffff;
+    font-size: 32px;
+    color: #000;
     text-align: center;
     margin: 10% 0px 0px 0px;
+
+   text-shadow:
+   -1px -1px 0 #fff,  
+    1px -1px 0 #fff,   
+    -1px 1px 0 #fff,   
+     1px 1px 0 #fff;
 }
 .explore-h p{
-    color: #c7c7c7;
+    color: #000;
     font-family: calibri;
     letter-spacing: 1px;
     width: 70%;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
+
+    text-shadow:
+   -1px -1px 0 #fff,  
+    1px -1px 0 #fff,   
+    -1px 1px 0 #fff,   
+     1px 1px 0 #fff;
 }
 .explore-h{
     display:flex;
@@ -227,9 +282,15 @@ nav{
 }
 .box-3{
     background-image: url('/media/img3.jpg');
+    background-position: center top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 .box-4{
     background-image: url('/media/img4.jpg');
+    background-position: center top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 footer{
  width: 100%;
