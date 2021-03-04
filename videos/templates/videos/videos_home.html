@@ -1,4 +1,6 @@
+
 {% extends "base.html" %}
+{% load embed_video_tags %}
 {% block extra_meta %}
    
 {% endblock %}
@@ -17,7 +19,15 @@
         <h1>Videos Page</h1>
         <div class="row">
             <div class="col-sm-12 mx-auto mt-5 text-center">
-               
+                {% video item.video as my_video %}
+                    URL: {{ video.video_URL }}
+                    Thumbnail: {{ video.video_image_thumbnail }}
+                    
+                    {% video my_video "large" %}
+
+                {% endvideo %}
+
+                {% video video '800x600' %}
             </div>
         </div>
     </div>

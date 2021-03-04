@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
+from embed_video .fields import EmbedVideoField
 
 
 SUBSCRIPTIONS = (
@@ -67,12 +68,16 @@ class Video(models.Model):
 
     class Meta:
         verbose_name_plural = 'Videos'
+        ordering = ['-video_added']
 
     video_category = models.ForeignKey(VideoCategory, null=True, blank=True, on_delete=models.SET_NULL)
     video_image_thumbnail = models.ImageField(blank=True, upload_to='video_category_images/image_thumbnails')
     video_name = models.CharField(max_length=30)
     video_description = models.CharField(max_length=255)
-    video_URL = models.URLField(max_length=300)
+    video_URL = EmbedVideoField()
     is_free_video = models.BooleanField(default=False)
+    video_added = models.DateTimeField(auto_now_add=True)
     
+    def __str__(self):
+        return str(self.video_name)
 

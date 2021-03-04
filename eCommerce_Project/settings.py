@@ -54,13 +54,13 @@ INSTALLED_APPS = [
     # ssl certificate for development
     'django_extensions',
     
+    
     # custom site app goes here
     'Jaxx_products_home.apps.JaxxProductsHomeConfig',
     'products.apps.ProductsConfig',
     'videos.apps.VideosConfig',
-    'storages'
-
-
+    'storages',
+    'embed_video',
     
 ]
 
