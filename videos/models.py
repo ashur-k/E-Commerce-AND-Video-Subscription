@@ -57,7 +57,7 @@ class VideoCategory(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.video_category)
-        super(VideosCategory, self).save(*args, **kwargs)
+        super(VideoCategory, self).save(*args, **kwargs)
         print(self.slug)
     
     def __str__(self):
