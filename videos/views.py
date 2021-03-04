@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .models import Videos
+from .models import Video
 
 
 def videos_home(request):
-    videos = Videos.objects.all()
+    videos = Video.objects.all()
     for video in videos:
         print(video.video_URL)
     template = 'videos/videos_home.html'

@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import UserProfile, Subscriptions, VideosCategory, Videos
+from .models import UserProfile, Subscription, VideoCategory, Video
 
 
 admin.site.register(UserProfile)
-admin.site.register(Subscriptions)
-admin.site.register(VideosCategory)
-admin.site.register(Videos)
+admin.site.register(Subscription)
+admin.site.register(VideoCategory)
+admin.site.register(Video)
 
