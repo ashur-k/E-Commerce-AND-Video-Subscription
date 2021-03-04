@@ -17,19 +17,21 @@
 {% endblock %} 
 {% load static %}
 {% block content %}
-    <div class="container" style="margin-top: 200px;">
+    <div class="container-fluid" style="margin-top: 160px;">
         <div class="row">
-             <div class="col-sm-12">
-            <div class="card text-center">
-                <div class="card-header">
-                    <h5><blockquote class="text-uppercase mt-3">Video Services</blockquote></h5>
+            <div class="col-sm-12">
+                <div class="div-header">
+                    <a href="" class="logo"><img src="" alt=""></a>
+                    <div class="toggle"><img src="" alt="">LOGO IMG HERE</div>
                 </div>
-                <div class="card-body">
+            </div>
+            <div class="banner">
+                <div class="content">
+                    
                     <hr class="general-hr">
-                    <h4 class="card-title" ><blockquote >Featured Video</blockquote></h4>  
-                    <div class="col-sm-12 col-md-12 col-lg-12 mb-4">
-                    <div class="embed-responsive">
-                        <iframe width="560" height="315" src="{{ my_video.video_URL}}" 
+                    <h1 class="text-center">Video Services</h1>
+                     <hr class="general-hr">
+                    <iframe width="1040" height="630" src="{{ my_video.video_URL}}" 
                         frameborder="0" 
                         allow="accelerometer; 
                         autoplay; 
@@ -37,14 +39,11 @@
                         encrypted-media; 
                         gyroscope; 
                         picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>                  
-                    <hr class="general-hr">
-                </div>
-                <div class="mb-3" style="padding-left: 30%; padding-right: 30%;">
-                        
+                   
                 </div>
             </div>
         </div>
+        
+            
     </div>
 {% endblock %}

@@ -1,0 +1,35 @@
+.div-header{
+    position: absolute;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px;
+    z-index: 1000;
+
+}
+.div-header .logo{
+    max-width: 120px;
+}
+.div-header .toggle{
+    max-width: 60px;
+    cursor: pointer;
+}
+.div-header .logo img,
+.div-header .toggle img{
+    max-width: 100%;
+}
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 100px;
+    background: linear-gradient(to left, #212121, #fff);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    
+}
