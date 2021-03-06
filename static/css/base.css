@@ -31,6 +31,9 @@
  .primary-background-color{
      background: var(--web-primary-bg-color-theme);   
  }
+ .navbar-image-icons{
+    width: 32px; height: 32px; aspect-ratio: auto 32 / 32; border-radius: 50%;
+ }
 /*  #############################################################
             Header Section All NAVBAR CSS Classes are here 
     ##############################################################

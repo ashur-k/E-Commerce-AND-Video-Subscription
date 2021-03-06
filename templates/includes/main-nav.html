@@ -8,40 +8,17 @@
         <li class="nav-item">
             <a class="nav-link primary-font-color" href="{% url 'videos_home' %}" tabindex="-1" aria-disabled="true">Jaxx Videos</a>
         </li>
+      
+    
         <li class="nav-item dropdown">
             <a class="nav-link primary-font-color" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Products
+                    Video Categories
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item ">By Category</a>
-                <a href="{% url 'products' %}" class="dropdown-item text-dark">All Products</a>
-            </ul>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link primary-font-color" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Cothing
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                {% for item in clothing_categories %}                    
+                {% for item in video_categories %}
                     <a href="" class="dropdown-item">
-                        <img class="img-thoumbnail" src="{{ item.image.url }}" style="width: 32px; height: 32px; aspect-ratio: auto 32 / 32; border-radius: 50%;">
-                        {{ item.name }}
-                    </a>                 
-                {% endfor %}
-                     <a href="" class="dropdown-item"><i class="fas fa-plus"> </i> Add new Category</a>
-            </ul>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link primary-font-color" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Homeware
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                {% for item in homeware_categories %}
-                    <a href="" class="dropdown-item">
-                        <img class="img-thoumbnail" src="{{ item.image.url }}" style="width: 32px; height: 32px; aspect-ratio: auto 32 / 32; border-radius: 50%;">
-                        {{ item.name }}
+                        <img class="img-thumbnail navbar-image-icons" src="{{ item.image.url }}">
+                        {{ item.video_category }}
                     </a>
                 {% endfor %}
                     <a href="" class="dropdown-item"><i class="fas fa-plus"> </i> Add new Category</a>
