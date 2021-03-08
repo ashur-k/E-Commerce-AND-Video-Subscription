@@ -10,28 +10,36 @@
 {% block extra_css %}
     <link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{% static 'videos/css/videos.css' %}">
-  
 {% endblock %}
 {% block extra_js %}
-
+<script type="text/javascript" src="{% static 'videos/js/app.js' %}" ></script>
 {% endblock %} 
 {% load static %}
 {% block content %}
-    <div class="container-fluid" style="margin-top: 160px;">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="div-header">
-                    <a href="" class="logo"><img src="" alt=""></a>
-                    <div class="toggle"><img src="" alt="">LOGO IMG HERE</div>
+<div class="container-fluid" style="margin-top: 160px;">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="home-left">
+                <header class="header">
+                    <div class="logo"><h1>{{ my_video.video_name}}</h1></div>
+
+                    <nav>
+                        <a class="a" href="#">{{ my_video.video_category }}</a>
+                        <a class="a" href="#">{{ my_video.video_description }}</a>
+                    </nav>
+    
+                </header>
+                <div class="left-container">
+                    <h1 class="site">WWW.Something.com</h1>
+                    <div class="cta">
+                        SEE MORE
+                    </div>
                 </div>
             </div>
-            <div class="banner">
-                <div class="content">
-                    
-                    <hr class="general-hr">
-                    <h1 class="text-center">Video Services</h1>
-                     <hr class="general-hr">
-                    <iframe width="1040" height="630" src="{{ my_video.video_URL}}" 
+
+            <div class="image-container">
+                <div class="overlay"></div>
+                <iframe width="1040" height="630" src="{{ my_video.video_URL}}" 
                         frameborder="0" 
                         allow="accelerometer; 
                         autoplay; 
@@ -39,11 +47,50 @@
                         encrypted-media; 
                         gyroscope; 
                         picture-in-picture" allowfullscreen></iframe>
-                   
-                </div>
             </div>
-        </div>
-        
-            
-    </div>
+
+            <div class="socials">
+                <ul>
+                    <li class="link">FAcebook</li>
+                    <li class="link">Linkedin</li>
+                    <li class="link">Github</li>
+                </ul>
+            </div>
+        </div>            
+    </div>   
+</div>
+
+<script>
+    let header = document.querySelector('.header');
+    let site = document.querySelector('.site');
+    let cta = document.querySelector('.cta');
+
+let imageOverlay = document.querySelector('.image-container').children[0];
+let mainImage = document.querySelector('.image-container').children[1];
+
+
+let links = Array.from(document.querySelectorAll('.link'));
+
+function animate(){
+    setTimeout (()=>{
+        header.classList.add('active');
+        imageOverlay.style.animation = 'slide 1s forwards';
+        mainImage.style.animation = 'slide-perm 1s forwards';
+    }, 2000);
+
+    setTimeout (()=>{
+        site.classList.add('active');
+        cta.classList.add('active');
+    }, 3000);
+    
+    links.forEach((link, idx)=>{
+        setTimeout(()=>{
+            link.classList.add('active');
+        },(idx * 200) +2500)
+    })
+}
+
+animate()
+
+</script>
 {% endblock %}
