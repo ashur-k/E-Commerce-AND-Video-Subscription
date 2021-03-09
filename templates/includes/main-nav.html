@@ -1,10 +1,5 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto fs-5" style="margin-right: 1px !important;">
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-4 primary-font-color" href="{% url 'homepage' %}">
-                Home
-            </a>
-        </li>
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto fs-6 text-uppercase" style="margin-right: 1px !important;">
         <li class="nav-item">
             <a class="nav-link primary-font-color" href="{% url 'videos_home' %}" tabindex="-1" aria-disabled="true">Jaxx Videos</a>
         </li>
@@ -12,7 +7,7 @@
     
         <li class="nav-item dropdown">
             <a class="nav-link primary-font-color" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Video Categories
+                    Our Videos
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 {% for item in video_categories %}

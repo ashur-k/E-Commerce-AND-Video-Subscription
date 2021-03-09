@@ -16,30 +16,40 @@
 {% endblock %} 
 {% load static %}
 {% block content %}
-<div class="container-fluid" style="margin-top: 160px;">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="home-left">
-                <header class="header">
-                    <div class="logo"><h1>{{ my_video.video_name}}</h1></div>
+<div class="container-fluid container-top text-white p-0 m-0">
+    <div class="row p-0 m-0">
+        <div class="col-sm-12 p-0 m-0">
 
-                    <nav>
-                        <a class="a" href="#">{{ my_video.video_category }}</a>
-                        <a class="a" href="#">{{ my_video.video_description }}</a>
-                    </nav>
-    
+            <div class="home-left" style="">
+                <header class="header">
+                    <div class="logo p-1 text-center" style="background-color: rgba(0, 0, 0, 0.1); color: rgb(243, 239, 8);">
+                        <h2>{{ my_video.video_name}}</h2>
+                    </div>
+                        <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap');
+                    </style>
+                    <div class="nav-look" style="border: 5px solid rgb(199, 20, 20); border-radius: 60px 45px 30px 15px/15px 30px 45px 60px;
+                    background: rgb(243, 239, 8)!important;">
+                        <a class="a d-none d-sm-none d-md-block text-center btn btn-sm fs-3" href="#" 
+                        style="background-color: rgba(243, 239, 8, 0.1); color: rgb(0, 0, 0)!important; width: 100%; font-weight: 900; font-family: 'Ribeye Marrow', cursive;">
+                            Similar Videos{{ my_video.video_category }}</a>
+                        <a class="a" href="#"></a>
+                    </div>    
                 </header>
-                <div class="left-container">
-                    <h1 class="site">WWW.Something.com</h1>
-                    <div class="cta">
-                        SEE MORE
+                <div class="left-container text-center" >
+                    <p class="site fs-4 text-center" style="background-color: rgba(243, 239, 8, 0.6); color: rgb(0, 20, 0); max-width: 90%; font-weight: 900;">
+                        {{ my_video.video_description }}</p>
+                    <div class="cta text-center">
+                        MORE VIDEOS
                     </div>
                 </div>
             </div>
 
-            <div class="image-container">
-                <div class="overlay"></div>
-                <iframe width="1040" height="630" src="{{ my_video.video_URL}}" 
+            <div class="video-container" style="">
+                <div class="overlay" style="background-image: url('{{ my_video.video_image_thumbnail.url  }}'); background-position: center;
+                        background-size: 100% 100%;
+                        background-repeat: no-repeat;"></div>
+                <iframe width="1040" height="100%" src="{{ my_video.video_URL}}" 
                         frameborder="0" 
                         allow="accelerometer; 
                         autoplay; 
@@ -51,11 +61,12 @@
 
             <div class="socials">
                 <ul>
-                    <li class="link">FAcebook</li>
-                    <li class="link">Linkedin</li>
-                    <li class="link">Github</li>
+                    <li class="link fs-3"  style="background-color: rgba(8, 12, 243, 0.1); color: rgb(243, 239, 8)!important; width: 100%; font-weight: 900;">Facebook</li>
+                    <li class="link fs-3"  style="background-color: rgba(8, 12, 243, 0.1); color: rgb(243, 239, 8)!important; width: 100%; font-weight: 900;">YouTube</li>
+                    <li class="link fs-3"  style="background-color: rgba(8, 12, 243, 0.1); color: rgb(243, 239, 8)!important; width: 100%; font-weight: 900;">Instagram</li>
                 </ul>
             </div>
+
         </div>            
     </div>   
 </div>
@@ -65,8 +76,8 @@
     let site = document.querySelector('.site');
     let cta = document.querySelector('.cta');
 
-let imageOverlay = document.querySelector('.image-container').children[0];
-let mainImage = document.querySelector('.image-container').children[1];
+let imageOverlay = document.querySelector('.video-container').children[0];
+let mainImage = document.querySelector('.video-container').children[1];
 
 
 let links = Array.from(document.querySelectorAll('.link'));
@@ -74,8 +85,8 @@ let links = Array.from(document.querySelectorAll('.link'));
 function animate(){
     setTimeout (()=>{
         header.classList.add('active');
-        imageOverlay.style.animation = 'slide 1s forwards';
-        mainImage.style.animation = 'slide-perm 1s forwards';
+        imageOverlay.style.animation = 'slide 5s forwards';
+        mainImage.style.animation = 'slide-perm 6s forwards';
     }, 2000);
 
     setTimeout (()=>{
