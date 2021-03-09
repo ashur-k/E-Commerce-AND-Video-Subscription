@@ -64,9 +64,9 @@ body, html{
 .video-container{
     position: absolute;
     left: 36%;
-    top: 11%;
+    top: 18%;
     width: 60%;
-    height: 600px;
+    height: 550px;
     overflow: hidden;
     z-index: 2;
     overflow: hidden;
@@ -116,7 +116,8 @@ body, html{
     opacity: 0;
     font-weight: 900;
     border: 5px solid rgb(199, 20, 20);
-     border-radius: 60px 45px 30px 15px/15px 30px 45px 60px;
+    border-radius: 60px 45px 30px 15px/15px 30px 45px 60px;
+    
 }
 .site{
     position: relative;
@@ -154,7 +155,18 @@ body, html{
     opacity: 1;
     transition: 0.5s;
 }
-
+.active2{
+    position: relative;
+    top: -410%;
+    opacity: 1;
+    transition: 0.5s;
+}
+.active3{
+    position: relative;
+    top: -30%;
+    opacity: 1;
+    transition: 0.5s;
+}
 
 @keyframes slide{
     0%{
