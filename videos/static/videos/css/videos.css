@@ -6,15 +6,11 @@
 
 body, html{
    background-color: #10100e;
-    
-    
-}
+     }
 .container-top{
     position: relative;
     top: 130px !important;
 }
-
-
 
 .a{
     color: #000 !important;
@@ -214,7 +210,43 @@ body, html{
 
 /* General mobile sizes */
   @media (max-width: 767px){
-      
+      body, html{
+        background-image: url('/media/bg.jpg');
+     }
+    .logo{
+            position: sticky !important;
+            bottom: 0;
+            left: 18%;
+    }
+     .home-left{
+         top: 6%;
+     }
+        .video-container {
+            left: 7%;
+            top: 23%;
+            width: 86%;
+            height: 228px;
+        }
+        .header{
+            left: 41%;  
+        }
+        .socials {   
+            top: 53%;  
+            left: 33%;  
+            }
+        .home-left {
+            background: transparent;
+           
+        }
+        .cta{
+            left: -78%;
+        }
+        .active3{
+            top: -54%;
+        }
+     .site{
+        
+    }
   }
 @media only screen 
   and (min-device-width: 768px) 

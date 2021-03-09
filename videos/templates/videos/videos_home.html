@@ -10,6 +10,9 @@
 {% block extra_css %}
     <link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{% static 'videos/css/videos.css' %}">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap');
+    </style>
 {% endblock %}
 {% block extra_js %}
 <script type="text/javascript" src="{% static 'videos/js/app.js' %}" ></script>
@@ -19,29 +22,37 @@
 <div class="container-fluid container-top text-white p-0 m-0">
     <div class="row p-0 m-0">
         <div class="col-sm-12 p-0 m-0">
+            <div class="home-left">
+               <div class="col-sm-12">
+                    <header class="header">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="logo p-1 text-center" style="background-color: rgba(0, 0, 0, 0.1); color: rgb(243, 239, 8);">
+                                    <p class="d-md-none">Similar Videos: {{ my_video.video_category }}</p>
+                                    <h2>{{ my_video.video_name}}</h2>
+                                    <small class="d-md-none">{{ my_video.video_description }}</small>
 
-            <div class="home-left" style="">
-                <header class="header">
-                    <div class="logo p-1 text-center" style="background-color: rgba(0, 0, 0, 0.1); color: rgb(243, 239, 8);">
-                        <h2>{{ my_video.video_name}}</h2>
-                    </div>
-                        <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Ribeye+Marrow&display=swap');
-                    </style>
-                    <div class="nav-look" style="border: 5px solid rgb(199, 20, 20); border-radius: 60px 45px 30px 15px/15px 30px 45px 60px;
-                    background: rgb(243, 239, 8)!important;">
-                        <a class="a d-none d-sm-none d-md-block text-center btn btn-sm fs-3" href="#" 
-                        style="background-color: rgba(243, 239, 8, 0.1); color: rgb(0, 0, 0)!important; width: 100%; font-weight: 900; font-family: 'Ribeye Marrow', cursive;">
-                            Similar Videos{{ my_video.video_category }}</a>
-                        <a class="a" href="#"></a>
-                    </div>    
-                </header>
-                <div class="left-container text-center" >
-                    <p class="site fs-4 text-center" style="background-color: rgba(243, 239, 8, 0.6); color: rgb(0, 20, 0); max-width: 90%; font-weight: 900;">
-                        {{ my_video.video_description }}</p>
-                    <div class="cta text-center">
-                       <a class="btn fs-4" href=""  style="font-weight: 900; font-family: 'Ribeye Marrow', cursive;">MORE VIDEOS</a>
-                       
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="nav-look d-none d-sm-none d-md-block " style="border: 5px solid rgb(199, 20, 20); border-radius: 60px 45px 30px 15px/15px 30px 45px 60px;
+                                        background: rgb(243, 239, 8)!important;">
+                                        <a class="a d-none d-sm-none d-md-block text-center btn btn-sm fs-3" href="#" 
+                                            style="background-color: rgba(243, 239, 8, 0.1); color: rgb(0, 0, 0)!important; width: 100%; font-weight: 900; font-family: 'Ribeye Marrow', cursive;">
+                                                Similar Videos{{ my_video.video_category }}</a>
+                                        <a class="a" href="#"></a>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>                   
+                    </header>
+                </div>
+                <div class="col-sm-12">
+                    <div class="left-container text-center" >
+                        <p class="site fs-4 text-center d-none d-sm-none d-md-block" style="background-color: rgba(243, 239, 8, 0.6); color: rgb(0, 20, 0); max-width: 90%; font-weight: 900;">
+                            {{ my_video.video_description }}</p>
+                        <div class="cta text-center">
+                            <a class="btn fs-4" href=""  style="font-weight: 900; font-family: 'Ribeye Marrow', cursive;">MORE VIDEOS</a>
+                        </div>
                     </div>
                 </div>
             </div>
