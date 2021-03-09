@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% load embed_video_tags %}
+
+{% block extra_meta %}
+   
+{% endblock %}
+{% block extra_title %} - V I D E O S{% endblock %}
+{% load static %}
+{% block extra_css %}
+
+{% endblock %}
+{% block extra_js %}
+<script type="text/javascript" src="{% static 'videos/js/app.js' %}" ></script>
+{% endblock %} 
+{% load static %}
+{% block content %}
+
+<div class="container" style="margin-top: 160px !important;">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h1>All Videos</h1>
+        </div>
+        <div class="row">
+            {% for video in videos %}
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                <img src="{{ video.video_image_thumbnail.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ video.video_name }}</h5>
+                        <p class="card-text">{{ video.video_description }}</p>
+                        <a href="#" class="btn btn-primary">Watch more {{ video.video_category.friendly_name }}</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+   
+</div>
+
+{% endblock %}

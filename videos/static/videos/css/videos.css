@@ -38,8 +38,8 @@ body, html{
 
 .nav-look{
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: -11%;
+    bottom: -40px;
     display: flex;
     width: 50%;
     
@@ -153,7 +153,7 @@ body, html{
 }
 .active2{
     position: relative;
-    top: -410%;
+    top: -391%;
     opacity: 1;
     transition: 0.5s;
 }
@@ -252,7 +252,7 @@ body, html{
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 2) {
-   
+
      
 
 }
@@ -266,25 +266,26 @@ body, html{
     .video-container {
 
     left: 29%;
-    top: 31%;
-    width: 68%;
-    height: 360px;
+    top: 29%;
+    width: 66%;
+    height: 416px;
    
 }
 .left-container {
-    bottom: 5%;
+    bottom: 2%;
     left: 42%;    
 }
 .nav-look {
       right: 39px;
-    bottom: -57px;
+    bottom: -82px;
     width: 100%;
 }
    .active3{
-       top: -127%;
+       top: -102%;
    }
    .socials{
-       left: 0;
+       left: 36px;
+       top: 41%;
    }
 
 }

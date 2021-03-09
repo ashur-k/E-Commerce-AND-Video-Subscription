@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, HttpResponse
 from .models import Video
 
 
@@ -11,3 +11,11 @@ def videos_home(request):
         'my_video': my_video,
     }
     return render(request, template , context)
+
+def all_videos(request):
+    videos = Video.objects.all()
+    context = {
+        'videos': videos,
+    }
+    template = "videos/all_videos.html"
+    return render (request, template, context)
