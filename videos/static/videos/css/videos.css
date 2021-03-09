@@ -262,6 +262,29 @@ body, html{
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 2) {
+
+    .video-container {
+
+    left: 29%;
+    top: 31%;
+    width: 68%;
+    height: 360px;
    
+}
+.left-container {
+    bottom: 5%;
+    left: 42%;    
+}
+.nav-look {
+      right: 39px;
+    bottom: -57px;
+    width: 100%;
+}
+   .active3{
+       top: -127%;
+   }
+   .socials{
+       left: 0;
+   }
 
 }
