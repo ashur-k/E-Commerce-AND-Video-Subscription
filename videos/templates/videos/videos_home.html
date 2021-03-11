@@ -34,8 +34,8 @@
                                                     font-weight: 900; 
                                                     font-family: 'Ribeye Marrow', cursive;">
                                     Similar Videos: {{ my_video.video_category }}</a>
-                                    <h2>{{ my_video.video_name}}</h2>
-                                    <small class="d-md-none">{{ my_video.video_description }}</small>
+                                    <h2></h2>
+                                    <small class="d-md-none">{{ my_video.video_name}}</small>
 
                                 </div>
                                 <div class="col-sm-12">
@@ -58,8 +58,8 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="left-container text-center" >
-                        <p class="site fs-4 text-center d-none d-sm-none d-md-block" style="color: rgb(255, 255, 255);  font-weight: 900;">
-                            {{ my_video.video_description }}</p>
+                        <p class="site fs-4 text-center d-none d-sm-none d-md-block" style="color: rgb(255, 255, 255); max-width: 90%; font-weight: 900;">
+                            {{ my_video.video_name}}</p>
                         <div class="cta text-center">
                             <a class="btn fs-4" href="{% url 'all_videos' %}" style="font-weight: 900; font-family: 'Ribeye Marrow', cursive;">MORE VIDEOS</a>
                         </div>

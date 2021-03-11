@@ -40,8 +40,8 @@
  */ 
 
 nav{
-    background: #f5be0d;
-    color: #fff;
+    background: #0f5d9b;
+    color: #000;
     display: flex;
     justify-content: space-between;
 }
@@ -57,7 +57,7 @@ nav .mainMenu li a{
     padding: 15px;
     text-decoration: none;
     text-transform: uppercase;
-    color: #2e2e2e;
+    color: #fff;
     font-size: 1.5rem;
     font-weight: 900;
 }
