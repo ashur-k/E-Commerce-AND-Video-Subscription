@@ -103,6 +103,10 @@ nav .logo {
     font-size: 25px;
     cursor: pointer
 }
+.pin-message{
+    text-decoration: none; 
+    color: black;
+}
 
 @media(max-width: 800px){
     nav .mainMenu{
