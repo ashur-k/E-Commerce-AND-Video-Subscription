@@ -77,7 +77,7 @@ body {
                         More Videos
                         </a>
                         
-                        <ul class="dropdown-menu ul-dropdown" aria-labelledby="navbarDropdown" style="background-color: #dc3545; ">
+                        <ul class="dropdown-menu ul-dropdown" aria-labelledby="navbarDropdown" style="background-color: #f5be0d!important;">
                         {% for category in video_categories %}
                             <a href="{% url 'all_videos' %}?category={{category.video_category}}" class="dropdown-item">
                                 <img class="img-thumbnail navbar-image-icons" src="{{ category.image.url }}">

@@ -39,8 +39,10 @@
 
                                 </div>
                                 <div class="col-sm-12">
-                                    <div class="nav-look d-none d-sm-none d-md-block " style="border: 5px solid rgb(199, 20, 20); border-radius: 60px 45px 30px 15px/15px 30px 45px 60px;
-                                        background: rgb(243, 239, 8)!important;">
+                                    <div class="nav-look d-none d-sm-none d-md-block " 
+                                    style="border: 5px solid rgb(199, 20, 20); 
+                                    border-radius: 60px 45px 30px 15px/15px 30px 45px 60px;
+                                    background: #f5be0d!important;">
                                         <a class="a d-none d-sm-none d-md-block text-center btn btn-sm fs-3" href="{% url 'all_videos' %}?category={{ my_video.video_category }}" 
                                             style="background-color: rgba(243, 239, 8, 0.1); 
                                                     color: rgb(0, 0, 0)!important; width: 100%; 
@@ -56,10 +58,10 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="left-container text-center" >
-                        <p class="site fs-4 text-center d-none d-sm-none d-md-block" style="color: rgb(255, 255, 255); max-width: 90%; font-weight: 900;">
+                        <p class="site fs-4 text-center d-none d-sm-none d-md-block" style="color: rgb(255, 255, 255);  font-weight: 900;">
                             {{ my_video.video_description }}</p>
                         <div class="cta text-center">
-                            <a class="btn fs-4" href="{% url 'all_videos' %}"  style="font-weight: 900; font-family: 'Ribeye Marrow', cursive;">MORE VIDEOS</a>
+                            <a class="btn fs-4" href="{% url 'all_videos' %}" style="font-weight: 900; font-family: 'Ribeye Marrow', cursive;">MORE VIDEOS</a>
                         </div>
                     </div>
                 </div>
