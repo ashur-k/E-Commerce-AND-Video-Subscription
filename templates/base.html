@@ -38,13 +38,23 @@
     <title>Jaxx {% block extra_title %}{% endblock %}</title>
     <!--Later I can load JAxx log here -->
     <link rel="shortcut icon" href="/media/title_icon.jpg">
-   
+   <style>
+       *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+   </style>
   </head>
   <body>
+      <!---->
     <section id="header-section"> 
         <header class="fixed-top">
-            <div class="row">
-                <div id="topnav" class="row bg-white p-0">
+                <div id="topnav" class="row bg-white p-0 d-none d-sm-none d-md-none d-lg-block">
                     <div class="col-12 col-lg-12 my-auto text-center p-0">
                         <a href="{% url 'videos_home' %}" class="nav-link main-logo-link">
                             <h2 class="logo-font text-dark my-0 f-weight-900">
@@ -53,12 +63,45 @@
                         </a>
                     </div>
                 </div>
-                <nav class="navbar navbar-expand-lg">
-                    <div class="container-fluid">                
-                        {% include 'includes/mobile-top-header.html' %} 
-                        {% include 'includes/main-nav.html' %}
-                    </div>
-                </nav>
+            <nav class="">
+                
+            <div class="openMenu">
+                <i class= "fa fa-bars"></i>        
+            </div>
+            <div class="openMenu">
+                <p>Jaxx Productions</p>     
+            </div>
+            
+            <ul class="mainMenu mb-0">
+                <li><a href="#">Jaxx Videos</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    More Videos
+                    </a>
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                    {% for item in video_categories %}
+                        <a href="" class="dropdown-item">
+                            <img class="img-thumbnail navbar-image-icons" src="{{ item.image.url }}">
+                            {{ item.video_category }}
+                        </a>
+                    {% endfor %}
+                        <a href="" class="dropdown-item"><i class="fas fa-plus"> </i> Add new Category</a>
+                </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+                
+                <div class="closeMenu">
+                    <i class="fa fa-times"></i>
+                </div>
+                <span class="icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube-square"></i>
+               
+                </span>
+            </ul>
+            </nav>
         </header>
     </section>
     
@@ -76,5 +119,22 @@
    
     {% block postloadjs %}
     {% endblock %}
+    <script>
+        const mainMenu = document.querySelector('.mainMenu');
+const closeMenu = document.querySelector('.closeMenu');
+const openMenu = document.querySelector('.openMenu');
+
+openMenu.addEventListener('click', show)
+closeMenu.addEventListener('click', close)
+
+function show (){
+    mainMenu.style.display = 'flex';
+    mainMenu.style.top = '0';
+}
+
+function close(){
+    mainMenu.style.top = '-100%'
+}
+    </script>
   </body>
 </html>

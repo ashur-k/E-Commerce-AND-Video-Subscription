@@ -38,31 +38,106 @@
             Header Section All NAVBAR CSS Classes are here 
     ##############################################################
  */ 
- 
-.navbar {
-    background: linear-gradient(to right, #212ce1, #212529);
-    font-weight: 900; 
+
+nav{
+    background: #dc3545;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+nav .mainMenu{
+    display: flex;
+    list-style: none;
+}
+nav .mainMenu li a{
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.5rem;
 }
 
-.hero-header {
-    height: 100%;
-    background: url('/media/annie-spratt-V1lmayjfBJc-unsplash.jpg') no-repeat bottom right fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+nav .mainMenu li a:hover{
+    background: rgb(0, 0, 0);
+
+}
+nav .openMenu {
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+}
+nav .v-logo{
+        font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
 }
 
-.hero-section{
-    background: url('/media/annie-spratt-V1lmayjfBJc-unsplash.jpg') no-repeat center top;
-    background-size: cover;
-    height: calc(100vh - 164px);
-    color: #F4FFFD;
-    font-family: 'Lato';
+nav .mainMenu .closeMenu, .icons i {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+}
+
+.fa-facebook:hover{
+    color: rgb(0, 110, 255);
+}
+.fa-instagram:hover{
+    color: rgb(86, 154, 243);
+}
+.fa-youtube-square:hover{
+    color: rgb(255, 0, 191);
+}
+.fa-github:hover{
+    color: rgb(255, 123, 0);
+}
+
+nav .logo {
+    margin: 6px;
+    font-size: 25px;
+    cursor: pointer
+}
+
+@media(max-width: 800px){
+    nav .mainMenu{
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        background: #000;
+        transition: top 1s ease;
+        display: none;
+
+    }
+    nav .mainMenu .closeMenu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+    }
+    nav .openMenu{
+        display: block;
+    }
+    nav .v-logo{
+        display: inline-block;
+    }
+    nav .mainMenu li a:hover{
+        background: none;
+        color: rgb(255, 123, 0);
+        font-size: 1.6rem;
+    }
+    .icons i{
+        display: inline-block;
+        padding: 12px;
+    }
 }
 #navbarSupportedContent > ul > li > ul > a:nth-child{
     color: black;
