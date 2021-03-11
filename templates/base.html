@@ -54,7 +54,8 @@ body {
       <!---->
     <section id="header-section"> 
         <header class="fixed-top">
-                <div id="topnav" class="row bg-white p-0 d-none d-sm-none d-md-none d-lg-block">
+            <div class="row p-0 m-0">
+                <div id="topnav" class="row bg-white p-0 m-0 d-none d-sm-none d-md-none d-lg-block">
                     <div class="col-12 col-lg-12 my-auto text-center p-0">
                         <a href="{% url 'videos_home' %}" class="nav-link main-logo-link">
                             <h2 class="logo-font text-dark my-0 f-weight-900">
@@ -63,45 +64,46 @@ body {
                         </a>
                     </div>
                 </div>
-            <nav class="">
-                
-            <div class="openMenu">
-                <i class= "fa fa-bars"></i>        
-            </div>
-            <div class="openMenu">
-                <p>Jaxx Productions</p>     
-            </div>
-            
-            <ul class="mainMenu mb-0">
-                <li><a href="#">Jaxx Videos</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    More Videos
-                    </a>
-                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                    {% for item in video_categories %}
-                        <a href="" class="dropdown-item">
-                            <img class="img-thumbnail navbar-image-icons" src="{{ item.image.url }}">
-                            {{ item.video_category }}
-                        </a>
-                    {% endfor %}
-                        <a href="" class="dropdown-item"><i class="fas fa-plus"> </i> Add new Category</a>
-                </ul>
-                </li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
-                
-                <div class="closeMenu">
-                    <i class="fa fa-times"></i>
+                <nav class="">                    
+                <div class="openMenu">
+                    <i class= "fa fa-bars"></i>        
                 </div>
-                <span class="icons">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-youtube-square"></i>
-               
-                </span>
-            </ul>
-            </nav>
+                <div class="openMenu">
+                    <a class="text-white" href="{% url 'videos_home' %}" style="text-decoration: none;">Jaxx Videos</a>
+                </div>
+                
+                <ul class="mainMenu mb-0">
+                    <li><a href="{% url 'videos_home' %}">Jaxx Videos</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        More Videos
+                        </a>
+                        
+                        <ul class="dropdown-menu ul-dropdown" aria-labelledby="navbarDropdown" style="background-color: #dc3545; ">
+                        {% for category in video_categories %}
+                            <a href="{% url 'all_videos' %}?category={{category.video_category}}" class="dropdown-item">
+                                <img class="img-thumbnail navbar-image-icons" src="{{ category.image.url }}">
+                                {{ category.video_category }}
+                            </a>
+                        {% endfor %}
+                            <a href="" class="dropdown-item"><i class="fas fa-plus"> </i> Add new Category</a>
+                    </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                    
+                    <div class="closeMenu">
+                        <i class="fa fa-times"></i>
+                    </div>
+                    <span class="icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-youtube-square"></i>
+                
+                    </span>
+                </ul>
+                </nav>
+            </div>
         </header>
     </section>
     

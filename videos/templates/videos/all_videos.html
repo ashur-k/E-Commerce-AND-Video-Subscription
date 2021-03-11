@@ -31,8 +31,33 @@
                         <p class="card-text">{{ video.video_description }}</p>
                         <a href="#" class="btn btn-primary">Watch more {{ video.video_category.friendly_name }}</a>
                         {% if request.user.is_superuser %}
-                        <a class="btn btn-danger mt-1" href="{% url 'delete_video' video.id %}">Delete Video</a>
+                        <a class="btn btn-danger mt-1" href="" data-bs-toggle="modal" data-bs-target="#video{{video.id}}DeleteModal">Delete Video</a>
                         {% endif %}
+                        <!-- Button trigger modal -->
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="video{{video.id}}DeleteModal" tabindex="-1" aria-labelledby="video{{video.id}}DeleteModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header bg-danger text-white">
+                                <h5 class="modal-title" id="video{{video.id}}DeleteModalLabel">Deleting Video</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete video {{video.video_name }}?
+                            </div>
+                           
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <form action="{% url 'delete_video' video.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Delete Video</button>
+                                </form>
+                                
+                            </div>
+                            </div>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>

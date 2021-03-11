@@ -49,6 +49,9 @@ nav .mainMenu{
     display: flex;
     list-style: none;
 }
+.ul-dropdown{
+    inset:-3px auto auto 0px !important;
+}
 nav .mainMenu li a{
     display: inline-block;
     padding: 15px;
@@ -60,6 +63,7 @@ nav .mainMenu li a{
 
 nav .mainMenu li a:hover{
     background: rgb(0, 0, 0);
+    color: #fff;
 
 }
 nav .openMenu {
