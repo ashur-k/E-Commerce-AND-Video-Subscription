@@ -28,7 +28,11 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="logo p-1 text-center" style="background-color: rgba(0, 0, 0, 0.1); color: rgb(243, 239, 8);">
-                                    <p class="d-md-none">Similar Videos: {{ my_video.video_category }}</p>
+                                    <a class="d-md-none" style="background-color: rgba(243, 239, 8, 0.1); 
+                                                    color: rgb(0, 0, 0)!important; width: 100%; 
+                                                    font-weight: 900; 
+                                                    font-family: 'Ribeye Marrow', cursive;">
+                                    Similar Videos: {{ my_video.video_category }}</a>
                                     <h2>{{ my_video.video_name}}</h2>
                                     <small class="d-md-none">{{ my_video.video_description }}</small>
 
@@ -37,7 +41,10 @@
                                     <div class="nav-look d-none d-sm-none d-md-block " style="border: 5px solid rgb(199, 20, 20); border-radius: 60px 45px 30px 15px/15px 30px 45px 60px;
                                         background: rgb(243, 239, 8)!important;">
                                         <a class="a d-none d-sm-none d-md-block text-center btn btn-sm fs-3" href="#" 
-                                            style="background-color: rgba(243, 239, 8, 0.1); color: rgb(0, 0, 0)!important; width: 100%; font-weight: 900; font-family: 'Ribeye Marrow', cursive;">
+                                            style="background-color: rgba(243, 239, 8, 0.1); 
+                                                    color: rgb(0, 0, 0)!important; width: 100%; 
+                                                    font-weight: 900; 
+                                                    font-family: 'Ribeye Marrow', cursive;">
                                                 Similar Videos: {{ my_video.video_category }}</a>
                                         <a class="a" href="#"></a>
                                     </div> 
