@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from django.contrib import messages
 from .models import Video
 
@@ -30,4 +30,4 @@ def delete_video(request, video_id):
     video = get_object_or_404(Video, pk=video_id)
     video.delete()
     messages.success(request, 'Product deleted successfully!')
-    return redirect('all_products')
+    return redirect('all_videos')
