@@ -80,4 +80,7 @@ class Video(models.Model):
     
     def __str__(self):
         return str(self.video_name)
-
+    
+    def delete(self, *args, **kwargs):
+        self.video_image_thumbnail.delete()
+        super().delete(*args, **kwargs)

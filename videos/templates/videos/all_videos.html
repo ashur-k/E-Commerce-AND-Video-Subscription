@@ -30,6 +30,9 @@
                         <h5 class="card-title">{{ video.video_name }}</h5>
                         <p class="card-text">{{ video.video_description }}</p>
                         <a href="#" class="btn btn-primary">Watch more {{ video.video_category.friendly_name }}</a>
+                        {% if request.user.is_superuser %}
+                        <a class="btn btn-danger mt-1" href="{% url 'delete_video' video.id %}">Delete Video</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
