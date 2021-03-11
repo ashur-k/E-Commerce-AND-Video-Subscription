@@ -62,6 +62,10 @@ class VideoCategory(models.Model):
     
     def __str__(self):
         return self.video_category
+    
+    def delete(self, *args, **kwargs):
+        self.image.delete()
+        super().delete(*args, **kwargs)
 
 
 class Video(models.Model):
