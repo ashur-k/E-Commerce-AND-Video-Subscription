@@ -28,7 +28,8 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="logo p-1 text-center" style="background-color: rgba(0, 0, 0, 0.1); color: rgb(243, 239, 8);">
-                                    <a class="d-md-none" style="background-color: rgba(243, 239, 8, 0.1); 
+
+                                    <a href="{% url 'all_videos' %}?category={{ my_video.video_category }}" class="d-md-none" style="background-color: rgba(243, 239, 8, 0.1); 
                                                     color: rgb(0, 0, 0)!important; width: 100%; 
                                                     font-weight: 900; 
                                                     font-family: 'Ribeye Marrow', cursive;">
@@ -40,7 +41,7 @@
                                 <div class="col-sm-12">
                                     <div class="nav-look d-none d-sm-none d-md-block " style="border: 5px solid rgb(199, 20, 20); border-radius: 60px 45px 30px 15px/15px 30px 45px 60px;
                                         background: rgb(243, 239, 8)!important;">
-                                        <a class="a d-none d-sm-none d-md-block text-center btn btn-sm fs-3" href="#" 
+                                        <a class="a d-none d-sm-none d-md-block text-center btn btn-sm fs-3" href="{% url 'all_videos' %}?category={{ my_video.video_category }}" 
                                             style="background-color: rgba(243, 239, 8, 0.1); 
                                                     color: rgb(0, 0, 0)!important; width: 100%; 
                                                     font-weight: 900; 
