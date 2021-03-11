@@ -27,6 +27,10 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+    
+    def delete(self, *args, **kwargs):
+        self.user_image.delete()
+        super().delete(*args, **kwargs)
 
 
 class Subscription(models.Model):
