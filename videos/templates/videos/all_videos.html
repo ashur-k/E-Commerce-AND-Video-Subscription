@@ -23,8 +23,22 @@
         </div>
         <div class="row">
             {% for video in videos %}
-            <div class="col-sm-4">
+            <div class="col-sm-4">               
                 <div class="card" style="width: 18rem;">
+                    {% if request.user.is_superuser %}
+                        {% if video.pinned %}
+                        <span>
+                            <small class="text-success"><i class="mt-1 fas fa-thumbtack m-2"></i>This video and displayed on homepage.</small>
+                        </span>
+                            
+                                                    
+                        {% else %}
+                            <a href="{% url 'pin_video' video.id %}" style="text-decoration: none; color: black;">
+                                <i class="fas fa-thumbtack m-2"></i>Pin Video
+                            </a>
+                        {% endif %}
+                            
+                    {% endif %}
                 <img src="{{ video.video_image_thumbnail.url }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ video.video_name }}</h5>

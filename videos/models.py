@@ -85,6 +85,7 @@ class Video(models.Model):
     video_URL = EmbedVideoField()
     is_free_video = models.BooleanField(default=False)
     video_added = models.DateTimeField(auto_now_add=True)
+    pinned = models.BooleanField(default=False)
     
     def __str__(self):
         return str(self.video_name)
@@ -92,3 +93,11 @@ class Video(models.Model):
     def delete(self, *args, **kwargs):
         self.video_image_thumbnail.delete()
         super().delete(*args, **kwargs)
+    
+    def pin(self):
+        self.pinned = True
+        self.save()
+
+    def unpin(self):
+        self.pinned = False 
+        self.save()

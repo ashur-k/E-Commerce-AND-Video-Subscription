@@ -6,13 +6,22 @@ from .models import Video, VideoCategory
 
 def videos_home(request):
     videos = Video.objects.all()
-    my_video = get_object_or_404(Video, id=9)
+    my_video = get_object_or_404(Video, pinned=True)
     template = 'videos/videos_home.html'
     context = {
         'videos': videos,
         'my_video': my_video,
     }
     return render(request, template , context)
+
+
+def pin_video(request, video_id): 
+    for video in Video.objects.all():
+        if video.pinned:
+            video.unpin()    
+    video = get_object_or_404(Video, pk=video_id)
+    video.pin()
+    return redirect('videos_home')
 
 def all_videos(request):
     videos = Video.objects.all()
@@ -23,6 +32,10 @@ def all_videos(request):
             videos = videos.filter(video_category__video_category__in=categories)         
             categories = VideoCategory.objects.filter(video_category__in=categories)
 
+            '''
+            This is if user is searching video,
+            I am adding this in advance
+            '''
             if 'q' in request.GET:
                 query = request.GET['q']
                 if not query:

@@ -5,6 +5,7 @@ class VideoAdmin(admin.ModelAdmin):
 
     list_display = ['id']
     list_filter = ['video_category']
+    readonly_fields = ('pinned',)
    
 
 
