@@ -70,14 +70,14 @@ body {
                     <a class="text-white" href="{% url 'videos_home' %}" style="text-decoration: none;">Jaxx Videos</a>
                 </div>
                 
-                <ul class="mainMenu mb-0">
+                <ul class="mainMenu mb-0 p-0">
                     <li><a href="{% url 'videos_home' %}">Jaxx Videos</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         More Videos
                         </a>
                         
-                        <ul class="dropdown-menu ul-dropdown" aria-labelledby="navbarDropdown" style="background-color: #f5be0d!important;" >
+                        <ul class="dropdown-menu ul-dropdown" aria-labelledby="navbarDropdown">
                         {% for category in video_categories %}
                             <a href="{% url 'all_videos' %}?category={{category.video_category}}" class="dropdown-item">
                                 <img class="img-thumbnail navbar-image-icons" src="{{ category.image.url }}">

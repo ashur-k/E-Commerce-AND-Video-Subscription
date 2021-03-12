@@ -51,6 +51,7 @@ nav .mainMenu{
 }
 .ul-dropdown{
     inset:-3px auto auto 0px !important;
+    background-color: #0f5d9b!important;
 }
 nav .mainMenu li a{
     display: inline-block;
@@ -120,7 +121,7 @@ nav .logo {
         flex-direction: column;
         justify-content:center;
         align-items: center;
-        background: #000;
+        background: #0f69b3;
         transition: top 1s ease;
         display: none;
 
@@ -150,6 +151,10 @@ nav .logo {
 }
 #navbarSupportedContent > ul > li > ul > a:nth-child{
     color: black;
+}
+.ul-dropdown{
+    inset:-10px auto auto -32px !important;
+    background-color: #000!important;
 }
 
 /* fixed top navbar only on medium and up */

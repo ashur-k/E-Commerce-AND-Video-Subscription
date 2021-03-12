@@ -47,7 +47,7 @@ body, html{
     background-repeat: no-repeat;  
     position: relative;
     left: -55%;
-    width: 55%;
+    width: 65%;
     height: 100vh;
     background-color: #fff;
     animation: slide-perm 2s forwards;
