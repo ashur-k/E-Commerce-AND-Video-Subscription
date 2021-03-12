@@ -246,7 +246,7 @@ body, html{
             left: 41%;  
         }
         .socials {   
-            top: 41%;  
+            top: 44%;  
             left: 36%;  
             }
         .home-left {
@@ -264,11 +264,10 @@ body, html{
     }
   }
 @media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-     
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
 
 }
 /* Ipads and tablets */

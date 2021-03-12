@@ -25,9 +25,8 @@
             <div class="col-sm-12 m-auto">
                 <div class="header1 card mobile-card-background-a-links" style="background: rgba(15, 93, 155, 0.1);">
                     <div class="card-body mx-auto text-center">
-                        <h5 class="card-title">{{ my_video.video_name}}</h5>
+                        <h5 class="card-title a-for-video-pages-links card-link">{{ my_video.video_name}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">{{ my_video.video_description}}</h6>
-                        <a href="{% url 'all_videos' %}?category={{ my_video.video_category }}" class="a-for-video-pages-links card-link">Watch Similar Videos</a>
                     </div>
                 </div>
             </div>
@@ -43,9 +42,10 @@
                                 <!--These divs are to display only on desktop screen-->
                                 <div class="col-sm-12">
                                     <div class="nav-look d-none d-sm-none d-md-block ">
-                                        <a class="a-for-video-pages-links d-none d-sm-none d-md-block btn btn-sm fs-3" href="{% url 'all_videos' %}?category={{ my_video.video_category }}">
-                                                Similar Videos: {{ my_video.video_category }}
-                                        </a>
+                                        <h6 class="a-for-video-pages-links d-none d-sm-none d-md-block btn btn-sm fs-3" 
+                                        href="{% url 'all_videos' %}?category={{ my_video.video_category }}">
+                                            {{ my_video.video_name }}
+                                        </h6>
                                     </div> 
                                 </div>
                                 <!--Similar videos / desktop screen display ends here-->
@@ -55,8 +55,7 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="left-container" >
-                        <p class="site fs-4 d-none d-sm-none d-md-block" style="color: rgb(255, 255, 255); max-width: 90%; font-weight: 900;">
-                            {{ my_video.video_name}}</p>
+                        <p class="site fs-4 d-none d-sm-none d-md-block" style="color: rgb(255, 255, 255); max-width: 90%; font-weight: 900;"></p>
                         <div class="cta">
                             <a class="btn fs-4" href="{% url 'all_videos' %}" style="font-weight: 900; font-family: 'Ribeye Marrow', cursive;">MORE VIDEOS</a>
                         </div>
