@@ -7,12 +7,21 @@ body, html{
     top: 130px !important;
 }
 
-.a{
+.a-for-video-pages-links{
     color: #000 !important;
     text-decoration: none;
+    background-color: none; 
+    color: rgb(0, 0, 0)!important; width: 100%; 
+    font-weight: 900; 
+    font-family: 'Ribeye Marrow', cursive;
 }
-.header .a:hover {
-    transform: scale(1.3);
+.mobile-card-background-a-links{   
+    border: 5px solid rgb(199, 20, 20); 
+    border-radius: 60px 45px 30px 15px/15px 30px 45px 60px;
+    background: #f5be0d!important;
+}
+ .a-for-video-pages-links:hover {
+    transform: scale(1.1);
     background: none;
 }
 
@@ -22,6 +31,12 @@ body, html{
     left: 50%;
     width: 100%;
     height: 6rem;
+    opacity: 0;
+}
+
+.header1{
+   
+    width: 100%;
     opacity: 0;
 }
 
@@ -37,6 +52,9 @@ body, html{
     bottom: 0px;
     display: flex;
     width: 50%;
+    border: 5px solid rgb(199, 20, 20); 
+    border-radius: 60px 45px 30px 15px/15px 30px 45px 60px;
+    background: #f5be0d!important;
     
 }
 
@@ -114,6 +132,7 @@ body, html{
     position: relative;
     top: 20px;
     opacity: 0;
+    left: 32%;
 }
 .socials{
     position: absolute;
@@ -219,7 +238,7 @@ body, html{
      }
         .video-container {
             left: 7%;
-            top: 23%;
+            top: 16%;
             width: 86%;
             height: 228px;
         }
@@ -227,18 +246,18 @@ body, html{
             left: 41%;  
         }
         .socials {   
-            top: 53%;  
-            left: 33%;  
+            top: 41%;  
+            left: 36%;  
             }
         .home-left {
             background: transparent;
            
         }
         .cta{
-            left: -78%;
+            left: -54%;
         }
         .active3{
-            top: -54%;
+            top: -150%;
         }
      .site{
         
@@ -277,7 +296,7 @@ body, html{
     width: 100%;
 }
    .active3{
-       top: -102%;
+       top: -159%;
    }
    .socials{
        left: 36px;

@@ -5,15 +5,12 @@ from .models import Video, VideoCategory
 
 
 def videos_home(request):
-    videos = Video.objects.all()
     my_video = get_object_or_404(Video, pinned=True)
     template = 'videos/videos_home.html'
     context = {
-        'videos': videos,
         'my_video': my_video,
     }
     return render(request, template , context)
-
 
 def pin_video(request, video_id): 
     for video in Video.objects.all():
@@ -52,6 +49,21 @@ def all_videos(request):
     }
     template = "videos/all_videos.html"
     return render (request, template, context)
+
+
+def play_video(request, video_id):
+    '''
+        This view is very similar to video home view
+        I could add functionality to play id' video rather
+        than pin video in home view but at this moment I beleive that
+        it will add complexity, i may later change my mind.
+    '''
+    my_video = get_object_or_404(Video, id=video_id)
+    template = 'videos/videos_home.html'
+    context = {
+        'my_video': my_video,
+    }
+    return render(request, template , context)
 
 
 def delete_video(request, video_id):
