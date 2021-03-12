@@ -30,9 +30,7 @@
                     {% if video.pinned %}
                     <span>
                         <small class="text-success"><i class="mt-1 fas fa-thumbtack m-2"></i>This video is pinned to show on homepage.</small>
-                    </span>
-                        
-                                                
+                    </span>                  
                     {% else %}
                         <a href="{% url 'pin_video' video.id %}" class="pin-message">
                             <small class=""><i class="mt-1 fas fa-thumbtack m-2"></i>Pin this video to show on homepage.</small>
@@ -40,21 +38,20 @@
                     {% endif %}
                         
                 {% endif %}
-            <img src="{{ video.video_image_thumbnail.url }}" class="card-img-top" alt="...">
+                <img src="{{ video.video_image_thumbnail.url }}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{ video.video_name }}</h5>
+                    <h5 class="card-title">{{ video.video_category.friendly_name }}</h5>
                     <p class="card-text">{{ video.video_description }}</p>
-                    <a href="#" class="btn btn-primary">Watch more {{ video.video_category.friendly_name }}</a>
+                    <a href="#" class="btn btn-primary m-1">Watch {{ video.video_name }}</a><br>
                     {% if request.user.is_superuser %}
-                    <a class="btn btn-danger" href="" data-bs-toggle="modal" data-bs-target="#video{{video.id}}DeleteModal">Delete Video</a>
+                        <!-- Button trigger modal -->
+                        <button class="btn btn-danger m-1" href="" data-bs-toggle="modal" data-bs-target="#video{{video.id}}DeleteModal">Delete Video</button>
                     {% endif %}
-                    <!-- Button trigger modal -->
-                    
                     <!-- Modal -->
                     <div class="modal fade" id="video{{video.id}}DeleteModal" tabindex="-1" aria-labelledby="video{{video.id}}DeleteModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                        <div class="modal-header bg-danger text-white">
+                        <div class="modal-header primary-background-color text-white">
                             <h5 class="modal-title" id="video{{video.id}}DeleteModalLabel">Deleting Video</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>

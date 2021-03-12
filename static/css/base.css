@@ -2,7 +2,7 @@
 
 /* I am going to set serious variables here so later if changes are required we can centrally make all changes */
 :root {
-    --web-primary-bg-color-theme:#0a354e !important;
+    --web-primary-bg-color-theme: #0f5d9b !important;
     --primary-font-color:#ffffff !important;
     --primary-font-family:'Lato';
     --secondary-font-family:'Abel';
@@ -14,6 +14,7 @@
     box-sizing: border-box;
     font-family: var(--primary-font-family);
 }
+
 /*  #############################################################
                         Stand Alone Classes
     ##############################################################
@@ -153,8 +154,8 @@ nav .logo {
     color: black;
 }
 .ul-dropdown{
-    inset:-10px auto auto -32px !important;
-    background-color: #000!important;
+    inset:-3px auto auto -32px !important;
+    
 }
 
 /* fixed top navbar only on medium and up */
